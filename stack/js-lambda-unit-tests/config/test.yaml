@@ -1,0 +1,20 @@
+
+bigQuery:
+  projectId: data-tests
+
+jobs:
+  -
+    name: extractFromWildcardTable
+    schedule: '30 02 * * ? *'
+    datasetId: analytics_
+    tablePrefix: 'events_raw_part_'
+    startDate: '2023-02-01'
+    endDate: '2023-02-01'
+    sql: SELECT 1 ;
+    destinationBucket: 'firebase-events-archive-avro'
+    s3Bucket: 'data-staging.yourcompany.aws'
+    s3Key: 'gcs/'
+    output: s3Stream
+    dryRun: true
+    disabled: true
+    notes: Daily

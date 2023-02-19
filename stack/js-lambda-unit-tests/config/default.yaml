@@ -1,0 +1,2 @@
+gcp:
+    gcpClientEmail: your-service-account-name@your-bigquery-project.iam.gserviceaccount.com

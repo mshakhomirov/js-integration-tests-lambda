@@ -1,0 +1,15 @@
+
+bigQuery:
+  projectId: data-production
+
+jobs:
+  -
+    name: gcs_to_s3
+    schedule: '30 02 * * ? *'
+    sql: SELECT 1 ;
+    s3Bucket: 'snowpipe.yourcomapany.aws'
+    s3Key: 'gcs/'
+    output: local
+    dryRun: true
+    disabled: true
+    notes: Daily

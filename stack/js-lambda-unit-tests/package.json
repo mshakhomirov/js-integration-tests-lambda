@@ -8,7 +8,7 @@
     "test-lambda-runtime": "NODE_ENV=test mocha --timeout 10000 ./test/unit/runTimeTest.js",
     "test-lambda-response": "NODE_ENV=test mocha --timeout 10000 ./test/unit/lambdaResponseTest.js",
     "test-unit": "NODE_ENV=test mocha NODE_ENV=test --exit --recursive ./test/unit",
-    "test-integration": "NODE_ENV=test mocha --delay --exit --require ./test/fixtures/bigquery-integration-bootstrap.js --timeout 100000 ./test/integration/multiCategoryArchiveTest.js"
+    "test-integration": "NODE_ENV=test mocha --require ./test/fixtures/bigquery-integration-bootstrap.js --timeout 100000 ./test/integration/simpleTest.js"
   },
   "author": "",
   "license": "ISC",
@@ -22,6 +22,9 @@
     "chai": "^4.2.0"
   },
   "dependencies": {
+    "@google-cloud/bigquery": "^5.12.0",
+    "config": "^3.3.9",
+    "js-yaml": "^4.1.0",
     "moment": "^2.24.0"
   }
 }
