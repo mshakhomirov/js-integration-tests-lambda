@@ -1,0 +1,14 @@
+{   "configOverride": false,
+    "jobs": [
+        
+        {
+            "name": "gcp_to_s3",
+            "output": "s3",
+            "dryRun": true,
+            "disabled": false,
+            "s3Key": "gcs/",
+            "s3Bucket": "data-staging.avro.aws",
+            "sourceBucket": "data-staging-gcs-avro"
+        }
+]
+}

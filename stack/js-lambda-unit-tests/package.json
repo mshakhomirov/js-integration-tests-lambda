@@ -1,0 +1,27 @@
+{
+  "name": "js-lambda-unit-tests",
+  "version": "1.0.0",
+  "description": "Simple micro service with unit tests.",
+  "main": "app.js",
+  "scripts": {
+    "local": "export DEBUG=true; export NODE_ENV=staging; run-local-lambda --file app.js --event test/event.json --timeout 1",
+    "test-lambda-runtime": "NODE_ENV=test mocha --timeout 10000 ./test/unit/runTimeTest.js",
+    "test-lambda-response": "NODE_ENV=test mocha --timeout 10000 ./test/unit/lambdaResponseTest.js",
+    "test-unit": "NODE_ENV=test mocha NODE_ENV=test --exit --recursive ./test/unit",
+    "test-integration": "NODE_ENV=test mocha --delay --exit --require ./test/fixtures/bigquery-integration-bootstrap.js --timeout 100000 ./test/integration/multiCategoryArchiveTest.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "aws-sdk": "2.804.0",
+    "run-local-lambda": "1.1.1",
+    "eslint": "^7.20.0",
+    "eslint-plugin-classes": "^0.1.1",
+    "eslint-plugin-promise": "^4.3.1",
+    "mocha": "^7.1.1",
+    "chai": "^4.2.0"
+  },
+  "dependencies": {
+    "moment": "^2.24.0"
+  }
+}
